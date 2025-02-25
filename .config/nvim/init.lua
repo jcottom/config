@@ -60,6 +60,7 @@ vim.opt.rtp:prepend(lazypath)
 -- list packages
 require("lazy").setup({
   "airblade/vim-rooter",
+  "airblade/vim-gitgutter",
   "nvim-lualine/lualine.nvim",
   {
     "nvim-telescope/telescope.nvim",
@@ -140,6 +141,10 @@ end
 lspconfig.rust_analyzer.setup {
   on_attach = on_attach,
   cmd = {"rustup", "run", "stable", "rust-analyzer"}
+}
+
+lspconfig.hls.setup {
+  on_attach = on_attach,
 }
 
 lspconfig.texlab.setup {
